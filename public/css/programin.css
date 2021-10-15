@@ -1,0 +1,64 @@
+/* pone * rojo a los campos abligatorios */
+.form-group .required::after {
+   content: " *";
+   color: red;
+}
+
+/* boton como enlace */
+button.enlace{
+   border:0;
+   background-color: rgba(104, 13, 13, 0) !important;
+   cursor:pointer;
+}
+
+.selectsinborde {
+   border: none !important;
+   }
+
+.inputsinborde {
+    border: none;
+    /* Opcion 1 */
+    outline: 0;
+    /* Opcion 2 */
+    outline: none;
+ }
+
+.colorfondo{
+   background-color: rgb(68, 233, 18);
+   }
+
+.colorfondo2{
+   background-color: rgb(221, 238, 216);
+   }
+
+.maximoancho{
+   width: 10px;
+}
+
+.form-control-xs {
+   height: calc(1.8rem + 2px);
+   padding: 0.25rem 0.5rem;
+   font-size: 0.8rem;
+   line-height: 1.5;
+   border-radius: 0.2rem;
+   /* height: calc(1.8125rem + 2px);
+   padding: 0.25rem 0.5rem;
+   font-size: 0.875rem;
+   line-height: 1.5;
+   border-radius: 0.2rem; */
+ }
+
+
+/* quitar las flechas y las x de los input number y date */
+.unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {
+       display: none;
+       -webkit-appearance: none;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button { display: none; }
+
+/* muestra flechas para ordenar tablas sorttable.js */
+/* table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
+   content: " \25B4\25BE"
+} */
