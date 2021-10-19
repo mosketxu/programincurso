@@ -4,7 +4,7 @@
 @section('titlePag','Editar Contacto')
 @section('navbar')
 @include('layouts.partials.navbarizquierda')
-<p class="h3 pt-2 text-dark">@yield('titlePag') {{$contacto->empresa}}</p> 
+<p class="h3 pt-2 text-dark">@yield('titlePag') {{$contacto->empresa}}</p>
 @include('contacto.navbar')
 @endsection
 
@@ -19,11 +19,11 @@
         {{-- - /.content-header --}}
         {{-- main content  --}}
         <section class="content">
-            <div class="cemontainer-fluid"> 
+            <div class="cemontainer-fluid">
                 <div class="card">
                 {{-- mensajes de exito o error --}}
                 @include('layouts.partials.mensajes')
-                
+
                 <form id="form" method="POST" action="{{ route("contacto.update") }}">
                     @csrf
                     @method('PUT')
@@ -81,6 +81,7 @@
                                     <option value="">-- Selecciona --</option>
                                     @foreach($provincias as $id => $provincia)
                                         <option value="{{old('provincia_id',$provincia->id)}}"  {{ $provincia->provincia == $contacto->provincia['provincia'] ? 'selected' : '' }}>{{ $provincia->provincia }}</option>
+                                        {{-- <option value="{{old('provincia_id',$provincia->id)}}"  {{ $provincia->provincia == $contacto->provincia->provincia ? 'selected' : '' }}>{{ $provincia->provincia }}</option> --}}
                                     @endforeach
                                 </select>
                             </div>

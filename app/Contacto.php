@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Contacto extends Model
 {
     protected $table = 'empresas';
-    protected $guarded = ['id']; 
+    protected $guarded = ['id'];
 
     public function pais()
     {
@@ -16,7 +16,7 @@ class Contacto extends Model
 
     public function provincia()
     {
-        return $this->belongsTo(Provincia::class);
+        return $this->belongsTo(Provincia::class)->withDefault();
     }
 
     public function scopeSearch($query, $busca){

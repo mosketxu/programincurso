@@ -30,7 +30,7 @@ class ContactoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() 
+    public function create()
     {
         $paises=Pais::get();
         $provincias=Provincia::get()
@@ -77,7 +77,7 @@ class ContactoController extends Controller
         $c=$contacto->id;
         // $empresas=EmpresaContacto::where('contacto_id',$contacto->id)->get()->toArray();
         $empresasasociadas=EmpresaContacto::where('contacto_id',$contacto->id)->pluck('empresa_id')->toArray();
-        
+
         $empresas= Empresa::orderBy('empresa')
             ->get();
 
@@ -106,7 +106,7 @@ class ContactoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Contacto $contacto)
-    { 
+    {
         $contacto->delete();
         return response()->json(['message', 'Contacto  '.$contacto->contacto.' eliminado']);
 
